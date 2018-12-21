@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title>Welcome</title>
+            <script
+                src="https://code.jquery.com/jquery-3.3.1.min.js"
+                integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+                crossorigin="anonymous">
+                 </script>
+
+    </head>
+
+    <body>
+         
+        <h2>Login Info</h2>
+        <p>This is homepage.............</p>
+
+        
+    </body>
+
+
+    <script>
+
+            $(document).ready(function(){
+               var uName =  localStorage.getItem('uName');
+                var uMob =  localStorage.getItem('mob');
+               var uPass =  localStorage.getItem('pass');
+               $('p').after("UserName : " +  uName + ", Password : " +  uPass  + ", Mobile : " + uMob);
+            });
+
+    </script>
+</html>

@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <style>
+        .row div{
+            padding: 20px 10px;
+            border: 1px solid;
+        }
+    </style>
+
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <title>Breakpoints</title>
+</head>
+<body>
+
+<!--A row can have maximum of 12 columns-->
+
+
+<!-- At smaller screen  below 576px col are stacked upon each other  -->
+<div class="container" style="background-color: lightblue">
+    <div class="row bg-indigo">
+        <div class="col-sm-6">col-sm-6</div>
+        <div class="col-sm-6">col-sm-6</div>
+    </div>
+</div>
+<br>
+
+
+<div class="container" style="background-color: lightpink">
+    <div class="row bg-indigo">
+        <!-- At below 768px col are stacked upon each other-->
+        <!-- At below 992px col with col2 are stacked upon each other-->
+        <div class="col-md-6  col-lg-3">col-md-6  col-lg-3</div>
+        <div class="col-md-6 col-lg-3">col-md-6  col-lg-3</div>
+        <div class="col-md-6 col-lg-3">col-md-6  col-lg-3</div>
+        <div class="col-md-6 col-lg-3">col-md-6  col-lg-3</div>
+    </div>
+</div>
+<br>
+
+<!--At any screen size it will divide row inti 4 parts -->
+<div class="container" style="background-color: lightgoldenrodyellow">
+    <div class="row ">
+        <div class="col-3">col-3</div>
+        <div class="col-3">col-3</div>
+        <div class="col-3">col-3</div>
+        <div class="col-3">col-3</div>
+    </div>
+</div>
+<br>
+
+<!-- Till  above 768px width it will divide into 4 equal col. when screen size is below 768px it will generate seperate 4 column each other i.e 4 row  -->
+<div class="container" style="background-color: lightsalmon">
+    <div class="row">
+        <div class="col-md">md</div>
+        <div class="col-md">md</div>
+        <div class="col-md">md</div>
+        <div class="col-md">md</div>
+
+    </div>
+</div>
+
+
+
+
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>beforeUnload()</title>
+    <style>
+
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+
+<script>
+
+    $(window).on("beforeunload",function () {
+        /*called when user try to close or navigate from current web page*/
+        /*limitation : cannot use any graphical representation */
+        return "GoodBye?";
+    });
+</script>
+</body>
+</html>

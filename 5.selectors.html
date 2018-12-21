@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Selectors</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+
+ <div id="a">Hello</div>
+ <br>
+ <span class="a">Hi</span>
+ <p class="a">Bye</p>
+<script>
+    $(document).ready(function () {
+       $('div#a').remove();  /*can be accessed using $(tagname#id)*/
+       $('span.a').html("Hi is replaced"); /*can be accessed using $(tagname.classname)*/
+       $('p.a').remove();
+    });
+</script>
+</body>
+</html>

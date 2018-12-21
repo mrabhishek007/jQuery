@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>on()</title>
+    <style>
+
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+<div>
+    <p id="ABC">Hello</p>
+</div>
+
+<h2>Checking whether input box is checked</h2>
+<input type="checkbox">
+<script>
+    $(document).ready(function () {
+
+        // is() returns boolean value
+        console.log($('div').is('#ABC')) ; // false bcz "#ABC" is id of 'p' not div
+        console.log($('p').is('#ABC')) ; // true bcz "#ABC" is id of 'p'
+        console.log($('p').parent().is('div')); //true
+        console.log($('html').parent().is('div')); //false
+
+        /*RealTime examples*/
+
+        $('input[type=checkbox]').change(function () {
+            var isChecked = $('input[type=checkbox]').is(":checked");
+            console.log("Is checked : ", isChecked);
+        });
+    });
+</script>
+</body>
+</html>

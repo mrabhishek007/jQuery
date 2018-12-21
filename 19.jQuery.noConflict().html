@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+
+<script>
+
+    /*when $  = $ of some other library */
+
+    //    prevent for collision from another library '$' symbol can be replaced to another variable
+
+/*
+    var $mynewjq = jQuery.noConflict(); // valid
+
+    $mynewjq(document).ready(function () {
+        alert("I am a valid jQuery");
+    });
+
+*/
+
+
+                 /*OR*/
+
+    function myJqueryCodes($) {
+        $('body').after("Hello"); //valid
+        alert("I am a valid jQuery");
+    }
+
+    jQuery(document).ready(function () {
+        myJqueryCodes(jQuery);
+    });
+
+
+</script>
+</body>
+</html>

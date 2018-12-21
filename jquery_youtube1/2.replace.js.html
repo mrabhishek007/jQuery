@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Replace</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+    <div id="txtbox">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, amet cum enim est et eum incidunt iure libero, nam nisi non possimus quae quaerat repudiandae, voluptates? At autem corporis eius laborum nam necessitatibus nulla odio, quae quos, repellat, reprehenderit ut.
+    </div>
+</body>
+
+<script>
+    $(document).ready(function () {
+
+        var newText = $("<p>");
+        newText.append("<i>This text is replaced..</i>");
+        $("#txtbox").html(newText);
+    });
+</script>
+
+</html>

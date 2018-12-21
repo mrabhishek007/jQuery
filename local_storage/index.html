@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <title>Welcome</title>
+        <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+    </head>
+    <body>
+        <form onsubmit="return submit()" action="login.html">
+            <label for="uName">Name</label>
+            <input id="uName" type="text"><br>
+            <label for="mobile">Mobile</label>
+            <input id="mobile" type="text"><br>
+            <label id="pass">Password</label>
+            <input id="pass" type="password"><br>
+            <input type="submit" value="Submit">
+         </form>
+    </body>
+
+
+    <script>
+
+        function submit(){
+               var uName  = $('#uname').val();
+               var mob = $('#mobile').val();
+               var pass = $('#pass').val();
+                console.log(uName,mob,pass);
+               localStorage.setItem("uName", uName);
+               localStorage.setItem("mob", mob);
+               localStorage.setItem("pass", pass);
+                return false;
+        }
+
+            $(document).ready(function(){
+
+
+            });
+
+    </script>
+</html>

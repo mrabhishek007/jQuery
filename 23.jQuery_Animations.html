@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Animations</title>
+    <style>
+
+        *{font-family: Arial, sans-serif;
+        }
+
+        button{
+            width: 130px;
+            height: 60px;
+            border-radius: 10px;
+            text-align: center;
+            background-color: royalblue;
+            color: white;
+            cursor: pointer;
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+        #content{
+            position: relative;
+            color: white;
+            background: teal;
+            font-size: 25px;
+            padding: 10px 5px;
+            width: 200px;
+            text-align: center;
+        }
+
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+
+<button>Click Me</button>
+<div id="content">
+    I can Animate
+</div>
+
+<script>
+
+
+    $(document).ready(function () {
+
+        // $("selector").animate("things to animate as object", "time in ms", callback when animation is completed);
+        $('button').click(function () {   // animating
+            animate();  // we are creating infinite closed loop of animations
+        });
+    });
+
+    function animate() {
+        $('#content').animate({
+            "left": "500px",
+            "top": "100px",
+            "fontSize": "35px",   /*In jquery font-size(css) = fontSize (It follows camel case convention)   */
+            "width" : "300px"
+        }, 900, animateToOriginal);
+    }
+
+    function animateToOriginal() {
+        $('#content').animate({
+            "left": "0px",
+            "top": "0px",
+            "fontSize": "25px",
+            "width" : "200px"
+        }, 1500, animate);
+    }
+
+</script>
+</body>
+</html>

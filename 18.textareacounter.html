@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+
+<h2>Text Area is limited to 150 max character</h2>
+<textarea id="charcount"></textarea>
+<span id="status"></span>
+
+
+<script>
+    $(document).ready(function () {
+
+        var maxLen = 150;
+
+        $('#charcount').keydown(function () {
+
+           var textLen =  $(this).val().length ;
+
+           if(textLen <= 150){
+               $(this).css("background","white");
+               $('#status').html(  "  " + (maxLen - textLen) + " character left...");
+           }else{
+               $(this).css("background","red");
+               $('#status').html(  " Max 150 character allowed...  ");
+           }
+
+        });
+
+
+
+
+        $('#status').html(  "  " +maxLen + " character left...");
+
+
+    });
+</script>
+</body>
+</html>

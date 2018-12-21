@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+<h2>1. dynamically operating input text </h2>
+
+<input id="mytxtBox" type="text">
+
+<h2>2. Dynamically styling the Lists</h2>
+<ul>
+    <li>Book</li>
+    <li>Pen</li>
+    <li>Pencil</li>
+    <li>Sharpner</li>
+    <li>Eraser</li>
+</ul>
+
+<script>
+    $(document).ready(function () {
+
+        /*executes only when input field is changed  & focus from input field is removed... */
+        $('#mytxtBox').change(function () {
+           alert("You modified the input-text")
+        });
+
+        /* insert html after input box*/
+        $("#mytxtBox").after("<p id='txt2'> 1. I am dynamically added after input field </p>");
+
+        /* insert html before input box*/
+        $("#mytxtBox").before("<p>1. I am dynamically added before input field </p>");
+
+        /* Same thing can be achieved using following :::: */
+
+        $("<p>2. I am dynamically inserted after input field </p>").insertAfter("#txt2");
+
+        $("<p>2. I am dynamically inserted before input field </p>").insertBefore("#mytxtBox");
+
+        /* Selecting next & prev sibling of the txtBox  */
+
+        // $("#mytxtBox").next().html("<p>I just modified you using $('mytxtBox').next().html()</p>")
+        // $("#mytxtBox").prev().html("<p>I just modified you using $('mytxtBox').prev().html()</p>")
+
+        /*Inserting values in the textbox */
+        $("#mytxtBox").val("This is a dynamic text");
+
+
+       $('ul').css(
+           {
+           // "key":"value"
+               "background-color": "green"
+           }
+       );
+
+       /*selects the second li element */
+       $('li').eq(1).css(
+           {
+           // "key":"value"
+               "color": "white",
+               "font-size":"40px"
+           }
+       );
+
+        /*select the siblings */
+        $('li').eq(1).siblings().css(
+            {
+                // "key":"value"
+                "color": "yellow",
+                "font-size":"25px"
+            }
+        )
+
+
+    });
+</script>
+</body>
+</html>

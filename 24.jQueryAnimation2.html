@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Animations</title>
+    <style>
+
+        *{font-family: Arial, sans-serif;
+        }
+
+        button{
+            width: 130px;
+            height: 60px;
+            border-radius: 10px;
+            text-align: center;
+            background-color: royalblue;
+            color: white;
+            cursor: pointer;
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+        #content{
+            border-radius: 50%;
+            position: relative;
+            width: 150px;
+            top: 100px;  /*wrt position*/
+            height: 150px;
+            background: teal;
+        }
+
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.color-animation/1/mainfile"></script>  <!--provides jquery dynamic color support-->
+</head>
+<body>
+
+<button>Click Me</button>
+<div id="content"></div>
+
+
+<script>
+    $(document).ready(function () {
+
+        $('button').click(function () {
+           animate(500);
+        });
+
+    });
+
+    function animate(time) {
+        $('#content').animate({
+            "height": "+=50px",  /*incrementing height 50px to the current height*/
+            // "height": "toggle",  /*height will be 0 in toggle form when clicked*/
+            "width": "+=50px",
+            "left": "100px",
+            "backgroundColor": "violet" // right
+            // "background-color": "violet"   // wrong, bcz jquery follows camel case convention
+        },time,callback)
+    }
+
+    /*called asynchronously when animation is completed */
+    function callback() {
+        console.log("Animation Done....")
+    }
+
+
+
+</script>
+</body>
+</html>

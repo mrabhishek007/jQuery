@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Effects</title>
+    <style>
+
+        *{font-family: Arial, sans-serif;
+        }
+
+        #toggler{
+            width: 100px;
+            height: 100px;
+            padding: 10px 15px;
+            border-radius: 10px;
+            text-align: center;
+            background-color: royalblue;
+            box-sizing: border-box;
+            color: white;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        #content{
+            color: teal;
+            font-size: large;
+            /*display: none;   necessary for slide down effect  */
+        }
+
+        #toggler:active{
+            background-color: dodgerblue;
+        }
+
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+    <div id="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aliquam at aut eius eligendi eum exercitationem harum, ipsam quia veniam?</div>
+    <br>
+    <div>
+        <a id="toggler">Click Me</a>
+    </div>
+<script>
+    $(document).ready(function () {
+        $("#toggler").click(function () {
+
+            // $("#content").slideDown(500);  /*parameter is optional  [paramter can be "slow","fast","nms"]   500 means 500ms works when display:none*/
+            // $("#content").slideUp("slow");
+            $("#content").css("display","none").slideDown(500).slideUp(500); /*chaining of methods */
+            //  $("#content").slideToggle("slow", optional);   /* toggle effect 2nd parameter can be used to trigger some functionality when a toggle happens */
+
+        });
+    });
+
+    var count = 0 ;
+
+    function optional() {
+        alert("You are toggling me " + (++count) + " times");
+    }
+
+</script>
+</body>
+</html>

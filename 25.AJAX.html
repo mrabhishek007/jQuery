@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AJAX</title>
+    <style>
+
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+
+
+
+
+<script>
+
+    /*loading a file using jquery*/
+    $(document).ready(function () {
+        $('body').after().load('file.txt');  /*only works on http mode. javascript won't allows load file on simple file format*/
+    });
+</script>
+</body>
+</html>

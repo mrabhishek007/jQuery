@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>$(document.ready())</title>
+    <style>
+
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        alert($("div").html()); // undefined bcz we are acessing div value before html will be loaded
+
+        $(document).ready(function () {
+            var z = $('div').html();    // valid this function will only be triggered after html will be loaded
+            alert(z);
+        });
+
+        alert("1st");  // executes before executing jquery $(document).ready();
+    </script>
+
+</head>
+
+<body>
+    <div>
+        Hello Guys
+    </div>
+</body>
+</html>

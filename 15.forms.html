@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+
+<form id="myForm" action="local_storage/login.html">
+    <label for="name">Name</label>
+    <input  type="text" id="name"><br>
+    <label for="mobile">Mobile</label>
+    <input  type="text" id="mobile"><br>
+    <label for="password">Password</label>
+    <input  type="password" id="password"><br>
+    <input type="submit" value="Register">
+</form>
+
+
+
+<script>
+
+    $(document).ready(function () {
+
+        // $('#name').focus();
+
+        // same functionality like focus()
+        $('#name').focusin(function () {
+            // focus() === focusin()
+            $('#name').val("Plz enter ur name");
+            console.log("I am in focus ")
+        });
+
+       $('#name').focusout(function () {
+            // focus() === focusin()
+            console.log("I am ouside focus ")
+        });
+
+
+       /*accessing any value inside input text*/
+
+        $('input').change(function () {
+           var inputVal = $(this).val();
+           console.log(inputVal);
+        });
+
+        /*acessing value on keyup from inputfield*/
+        $('input').keyup(function () {
+           var inputVal = $(this).val();
+           console.log("keyup : ",inputVal);
+        });
+
+        /* submitting the form */
+        $('#myForm').submit(function () {
+            // alert("Submission successful");
+            confirm("submit?");
+            return false; // no redirection
+
+        });
+
+    });
+</script>
+</body>
+</html>

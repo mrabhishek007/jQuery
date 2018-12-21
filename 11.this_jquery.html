@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>this</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+
+<ul>
+    <li>Dog</li>
+    <li>cat</li>
+    <li>Man</li>
+    <li>Pig</li>
+    <li>Cheetah</li>
+</ul>
+
+<script>
+
+    function changeLi() {
+        $(this).css({
+            "color" : "green",
+            "font-size": '25px'
+        });
+    }
+
+    $(document).ready(function () {
+
+        /*In jQuery, 'this' is a collection i.e array of objects*/
+
+        var isTrue = $(this)[0] == this  ; // true bcz jQuery stores window obj like in array format unlike traditional javascript 'this' is just a object
+        console.log(isTrue) ; // true
+        console.log($(this) === this ) ; // false bcz $(this) is a collection of array
+
+        $('li').click(changeLi);
+
+
+
+    });
+</script>
+</body>
+</html>

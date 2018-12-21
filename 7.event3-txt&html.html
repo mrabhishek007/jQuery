@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+
+<div id="div1">
+    <p>I am in div1</p>
+    <div id="div2">
+        <p>I am in div 2</p>
+    </div>
+</div>
+
+<script>
+
+    $(document).ready(function () {
+
+        // displays the text present inside div1
+        var div1Txt = $("#div1").text();
+        console.log("div 1 : ",div1Txt);
+
+        // displays the text present inside div2
+        var div2Txt = $("#div2").text();
+        console.log("div 2 : ",div2Txt);
+
+
+        // displays the html code present inside div1
+        var div1Html = $("#div1").html();
+        console.log("div 1 html code : ",div1Html);
+
+        // displays the html code present inside div2
+        var div2Html = $("#div2").html();
+        console.log("div 2  html code: ",div2Html);
+
+
+
+
+
+  });
+
+</script>
+</body>
+</html>

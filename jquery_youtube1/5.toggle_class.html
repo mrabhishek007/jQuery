@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>toggleclass</title>
+    <style>
+        .toggle{
+            color: #6F0101;
+            text-shadow: black 2px 3px;
+            font-size: large;
+            font-family: "Comic Sans MS", sans-serif;
+            font-weight: bold;
+        }
+
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+</head>
+<body>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa dolorum esse nihil obcaecati officia placeat quaerat quasi sit, tempora tenetur! Dicta dignissimos harum impedit in iste odit repellat soluta suscipit, voluptatum! Dicta ex, iusto molestias optio placeat sequi velit voluptatem.</p>
+<br>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aliquam corporis esse facere id ipsam iusto molestiae natus nihil voluptas?</p>
+
+
+<script>
+    $(document).ready(function () {
+        $("p").hover(function () {
+           $(this).toggleClass("toggle");
+        });
+    });
+</script>
+
+
+</body>
+</html>

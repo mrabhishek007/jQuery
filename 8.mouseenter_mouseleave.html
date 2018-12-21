@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MouseEnter & leave</title>
+    <style>
+        div{
+            height: 100px;
+            width: 100px;
+            background-color: #c7254e;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+
+<div>
+
+</div>
+<script>
+
+    function leave(){
+        console.log("U r leaving..")
+    };
+        function enter(){
+            console.log("U r in..")
+    };
+
+    $(document).ready(function () {
+
+        /*  $('div').mouseenter(enter);
+            $('div').mouseleave(leave);
+        */
+        /*The above functionality can be achieved just by using hover which accepts two arguments */
+        $('div').hover(enter, leave);
+    });
+</script>
+</body>
+</html>

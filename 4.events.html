@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Event Handlers</title>
+    <style>
+
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+
+<p>Hello Boys, click me !</p>
+<p>Hello Boys, dbl click me !</p>
+<br>
+KeyUp : <input type="text">
+<br>
+KeyDown : <input id="keydown" type="text">
+<br>
+hover : <input id="hover" type="text">
+
+
+<script>
+    $(document).ready(function () {
+       $("p:first").click(function () {  // click event
+           alert("I am click event");
+       });
+
+       $("p:last").dblclick(function () {   // double click event
+           alert("I am double click event");
+       });
+
+       // it will not execute until the pressed key is released
+       $("input").keyup(function () {
+           alert("I am keyup");
+       });
+
+        // unlike keyup it will execute whenever we press  a single key
+       $("#keydown").keydown(function () {
+           alert("I am keyDown")
+       });
+
+        // hover will accept 2 parameter where 1st will trigger when it is hovered and other will trigger when textfield is unhovered
+       $("#hover").hover(function () {
+           console.log("you are hovering me");
+       }, function () {
+           console.log("You are leaving me");
+       });
+
+
+
+    });
+</script>
+</body>
+</html>

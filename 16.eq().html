@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+
+<ul>
+    <li>Red</li>
+    <li>Blue</li>
+    <li>Black</li>
+    <li>Green</li>
+</ul>
+<script>
+    $(document).ready(function () {
+
+        var liData = $('li').eq(1).text();
+        alert(liData);
+
+    });
+</script>
+</body>
+</html>

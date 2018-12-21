@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>window.load()</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script>
+
+        /* Run this when the page is fully loaded including graphics.*/
+        $(window).on("load",function(){
+            alert("Window is ready....")
+        });
+
+        $(document).ready(function () {
+            alert("DOM is ready....")
+            $("body").append("<p>Document is ready</p>")
+        });
+
+
+    </script>
+</head>
+<body>
+<img src= "http://www.superedo.net/wallpapers/wallpapers/Android%20Tablet/Huawei%20Mediapad%2010%20Fhd/huawei_mediapad_10_fhd_118.jpg">
+</body>
+</html>

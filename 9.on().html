@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>on()</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+<button>Click Me</button>
+
+<script>
+
+
+    function changeCss () {
+        $(this).css({
+            "color": "red",
+        });
+    }
+
+    function removeCss() {
+        $(this).css({
+            "color":"black",
+        });
+    }
+
+    /*on() is used to attach event handlers to the dynamic html*/
+    $(document).ready(function () {
+
+        $('button').click(function () {
+            $('button').after("<p>I am dynamic text</p>");
+        });
+
+        // error bcz we cannot perform direct operation on dynamically generated html
+         $('p').click(changeCss);
+
+
+
+        /*Unlike above we use 'on()' to perform operations on dynamic html*/
+
+        /* Structure : $(document).on("EVENT", "SELECTOR", "FUNCTION")       */
+        $(document).on("mouseenter","p", changeCss );
+        $(document).on("mouseleave","p", removeCss );
+
+    });
+</script>
+</body>
+</html>

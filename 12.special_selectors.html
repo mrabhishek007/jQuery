@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+<h2>Selecting 2 elements simultaneously</h2>
+<p id="txt1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus dignissimos impedit ipsam maiores modi nostrum optio pariatur praesentium qui, reiciendis?</p>
+<div class="txt2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus dignissimos impedit ipsam maiores modi nostrum optio pariatur praesentium qui, reiciendis?</div>
+<br>
+<span >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus dignissimos impedit ipsam maiores modi nostrum optio pariatur praesentium qui, reiciendis?</span>
+
+<h2>Selecting elements containing some specific text</h2>
+<p class="txt3">I am learning jQuery</p>
+<p class="txt3">I am learning jQuery</p>
+<p class="txt3">Aren't you learning? </p>
+
+<h2>targeting attribute with their elements </h2>
+<span data-xyz="xxxxxx">I am hero</span>
+<br>
+<h2>targeting attribute with their elements starting with specific word </h2>
+
+<a href="/jquery/10.css_retrieve.html">Internal link</a>
+<a target="_blank" href="https://www.google.com">External link</a>
+<a target="_blank" href="https://www.facebook.com">Facebook</a>
+<p class="myOwnClass1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, soluta.</p>
+<p class="myOwnClassXXXXXX">Lorem ipsum dolor sit amet.</p>
+
+<br>
+<h2>targeting attribute with their elements ending with specific word </h2>
+<a target="_blank" href="http://www.facebook.com">Facebook</a>
+<a target="_blank" href="http://www.facebook.in">Amazon</a>
+<p class="myclassZooo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus delectus ex itaque molestias, mollitia nesciunt placeat sed temporibus totam voluptates.</p>
+<p class="whateverZooo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus delectus ex itaque molestias, mollitia nesciunt placeat sed temporibus totam voluptates.</p>
+<input type="text" value="diwaliZooo">
+
+<!--RealTime use selecting images which is of type 'jpeg'-->
+<img height="100" width="100" src="/UI-class/workspace/CSS3/img/image3.jpeg">
+<img height="100" width="100" src="/UI-class/workspace/CSS3/img/background.jpg">
+
+<br>
+
+<h2>Not Selectors </h2>
+
+    <div class="ABCD">Hello </div>
+    <div class="ABCD">Hello Again</div>
+    <div>Hello There </div>
+    <div>Hello God</div>
+    <div>Hello, How are you</div>
+    <div>Bye</div>
+
+
+
+
+<script>
+    $(document).ready(function () {
+
+        /* selecting 2 elements simultaneously */
+        $("#txt1,.txt2").click(function () {
+            alert("either txt1 or txt2 is clicked")
+        });
+
+        /* selecting every elements on the dom tree */
+        console.log($('*'));
+        // $('*').css("background-color","green").css("color","white");
+
+       /* selecting elements containing some specific text*/
+        $('.txt3:contains(jQuery)').css({
+           "background-color":"pink"
+        });
+
+        /* targeting attribute with their elements*/
+        $('span[data-xyz]').click(function () {
+            $(this).html("Hero is changed now")
+        });
+
+        /*targeting  attributes which starts with some specific words  */
+        $('a[href^=https]').css("text-decoration", "none").css("background", "yellow"); // targets only links which starts with 'http'
+        $('p[class^=myOwn]').css("text-decoration", "none").css("background", "yellow"); // targets p with class starting with word 'myOwn'
+
+        /*targeting  attributes which ends with some specific words  */
+        $('a[href$=".in]').css("background-color", "red");
+        $('p[class$=Zooo]').css("background-color", "red");
+        $('input[value$=Zooo]').css("background-color", "red");
+        $('img[src$=jpeg]').css('border','2px solid black'); // selcting image of type jpeg
+
+        /*Not selectors (targeting elements  which doesn't contain some specific words)*/
+
+        $('div:not(.ABCD)').css('color', 'green');
+
+
+    });
+</script>
+</body>
+</html>

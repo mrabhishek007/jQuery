@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+
+<ul>
+    <li>I'm odd1 </li>
+    <li>I'm even1</li>
+    <li>I'm odd2</li>
+    <li>I'm even2</li>
+    <li>I'm odd3 </li>
+    <li>I'm even3</li>
+    <li>I'm odd4</li>
+    <li>I'm even4</li>
+</ul>
+<script>
+    $(document).ready(function () {
+
+        // var liData = $('li:nth-child(1)').text(); /*index starts from 1 for odd unlike arrays */ /*it will select first element*/
+        // alert(liData);
+
+      // var  liEvenEle = $('li:nth-last-of-type(even)').text();  /*select 0, 2 ,4 , 6 (even) index similar to array */
+      // var  liOddEle = $('li:nth-last-of-type(odd)').text();  /*select 1, 3 ,5 , 7 (odd) index similar to array */
+      //   alert(liEvenEle);
+
+
+        // var  liEvenEle = $('li:nth-child(2n)').text();  /*select 2, 4 ,6 , 8 (even) index similar to real number (counting number) */
+        var  liOddEle = $('li:nth-child(2n-1)').text();  /*select 1, 3 ,5 , 7 (odd) index similar to real number (counting number)*/
+          alert(liOddEle);
+          $('li:nth-child(2n-1)').css("background-color","green"); // selecting odd  child
+
+
+    });
+</script>
+</body>
+</html>

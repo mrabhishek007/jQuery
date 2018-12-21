@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>News ticker</title>
+    <style>
+        .page{
+            display: none;
+        }
+        .active{
+            font-family: "Comic Sans MS", sans-serif;
+            display: block;
+            color: #be6c24ed;
+            display: block;
+            font-size: 25px;
+            font-weight: bold;
+            padding: 10px;
+        }
+
+        #prev, #next {
+            background-color: #19563fbd;
+            margin: 5px;
+            color: white;
+            font-weight: bold;
+            width: 35px;
+            height: 35px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 30px;
+            padding: 10px;
+            display: inline-block;
+        }
+
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+
+<div>
+    <div class="page active">This is page 1</div>
+    <div class="page">This is page 2</div>
+    <div class="page">This is page 3</div>
+    <div class="page">This is page 4</div>
+    <div class="page">This is page 5</div>
+    <div class="page">This is page 6</div>
+    <div class="page">This is page 7</div>
+</div>
+<br><br>
+<a  id="prev"> << </a>
+<a  id="next"> >> </a>
+
+
+<script>
+    $(document).ready(function () {
+
+       $('#next').click(function () {
+           var activeEle =  $('div.active');
+           activeEle.removeClass('active');
+
+           if(activeEle.next().length === 0){
+               // if index pos is last setting it to 1st element
+               $('div.page').eq(0).addClass('active').css('opacity',0).animate({
+                   opacity :1
+               },500);
+               return;
+           }
+
+           activeEle.next().addClass('active').css('opacity',0).animate({
+               opacity :1
+           },500);
+       });
+
+       $('#prev').click(function () {
+
+           var activeEle =  $('div.active');
+           activeEle.removeClass('active').css('opacity',0).animate({
+               opacity :1
+           },500);
+
+           if(activeEle.prev().length === 0){
+               // eq(-1) will return last element just like python sets
+               $('div.page').eq(-1).addClass('active'); // if index pos is first setting it to the last element
+               return;
+           }
+           activeEle.prev().addClass('active').css('opacity',0).animate({
+               opacity :1
+           },500);
+       });
+
+    });
+</script>
+</body>
+</html>

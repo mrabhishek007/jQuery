@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Show/Hide</title>
+
+    <style>
+        #textArea {
+            /*when page is loaded default is disabled*/
+            display: none;
+            color: #6F0101;
+        }
+    </style>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+    <a href="#" id="showElement">Show</a>
+    <a href="#" id="removeElement">Hide</a>
+    <a href="#" id="toggle">Toggle</a> <!--automatically handles hide/show functionality-->
+
+   <p id="textArea">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eveniet expedita ipsa ipsum necessitatibus perferendis quo repudiandae, suscipit. Adipisci aperiam delectus eius laboriosam maxime nam nobis obcaecati quos. Assumenda dolor fugiat itaque laudantium nam nulla quos repellat sint temporibus voluptatem. Adipisci debitis deleniti id minima necessitatibus optio repellendus soluta voluptas voluptates voluptatum. Adipisci aliquam dolore facilis ipsam quasi sit voluptatum!</p>
+
+    <script>
+        $(document).ready(function () {
+
+           $("#showElement").on("click", function () {
+               $("#textArea").show();
+           });
+
+           $("#removeElement").on("click", function () {
+               $("#textArea").hide();
+           });
+
+           $("#toggle").on("click", function () {
+               $("#textArea").toggle();
+           });
+
+
+
+        });
+    </script>
+</body>
+</html>

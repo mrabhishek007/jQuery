@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AJAX</title>
+    <style>
+
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+
+
+
+
+<script>
+
+    $(document).ready(function () {
+
+        /* $ === jQuery  */
+
+        $.ajax({
+            type:"GET",
+            url : "file.txt",
+        }).done(asyncResult)
+          .fail(fail);
+
+        function asyncResult(result, statusCode) {
+            // returns result after AJAX request
+            alert("status: " + statusCode  + ", Data : " + result);  // This is a dynamic text file
+        }
+
+        function fail(error, statusCode) {
+            // returns error result after AJAX request
+            alert("status: " + statusCode  + ", error : "  + error.statusText );  // not found
+        }
+
+
+        /*In real world application data can be passed like following*/
+
+/*
+        $.ajax({
+            type: "GET",
+            url : "https://myWeb.php",
+            data :{
+                "username": $('selector').value(),
+                "mob" : '8699474954',
+                age: 22
+            }
+        }).done(asyncResult)
+            .fail(fail);
+
+        function asyncResult(result, statusCode) {
+            // returns result after AJAX request
+            alert("status: " + statusCode  + ", Data : " + result);  // This is a dynamic text file
+        }
+
+        function fail(error, statusCode) {
+            // returns error result after AJAX request
+            alert("status: " + statusCode  + ", error : "  + error.statusText );  // not found
+        }
+
+
+*/
+
+
+
+
+
+
+    });
+</script>
+</body>
+</html>
